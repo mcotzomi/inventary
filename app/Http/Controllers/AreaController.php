@@ -14,7 +14,8 @@ class AreaController extends Controller
      */
     public function index()
     {
-        //
+        $areas = Area::orderByDesc('id');
+        return view('area.index', compact('areas'));
     }
 
     /**
@@ -24,7 +25,7 @@ class AreaController extends Controller
      */
     public function create()
     {
-        //
+     return view('area.create');
     }
 
     /**
@@ -35,7 +36,14 @@ class AreaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = $request->validate(
+            [
+                'name' => ['string', 'required'],
+                'cantidad' => ['integer', 'required'],
+                 
+            ]);
+         $area = area::create($rules);
+         return redirect()->route('area.index');
     }
 
     /**
