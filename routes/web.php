@@ -24,3 +24,4 @@ Route::post('area/guardar', [AreaController::class, 'store'])->name('area.store'
 Route::get('area/listar', [AreaController::class, 'index'])->name('area.index');
 Route::get('area/{area}/editar', [AreaController::class, 'edit'])->name('area.edit');
 Route::put('area/{area}/actualizar', [AreaController::class, 'update'])->name('area.update');
+Route::delete('area/{area}/eliminar', [AreaController::class, 'destroy'])->name('area.destroy');

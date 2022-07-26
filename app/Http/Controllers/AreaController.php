@@ -52,7 +52,7 @@ class AreaController extends Controller
      */
     public function show(Area $area)
     {
-        //
+        return view('area.show', compact('area'));
     }
 
     /**
@@ -88,6 +88,7 @@ class AreaController extends Controller
      */
     public function destroy(Area $area)
     {
-        //
+        $area->delete();
+        return redirect()->route('area.index');
     }
 }

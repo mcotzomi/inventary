@@ -24,9 +24,7 @@
     <p>
     </p>
 
-    <a href="" class="btn btn-link">
-        eliminar productos
-    </a>
+
 
 
     <div class="col-sm-12"></div>
