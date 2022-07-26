@@ -25,7 +25,7 @@ class AreaController extends Controller
      */
     public function create()
     {
-     return view('area.create');
+        return view('area.create');
     }
 
     /**
@@ -40,10 +40,12 @@ class AreaController extends Controller
             [
                 'name' => ['string', 'required'],
                 'cantidad' => ['integer', 'required'],
-                 
-            ]);
-         $area = area::create($rules);
-         return redirect()->route('area.index');
+
+            ]
+        );
+        //dd($rules);
+        $area = Area::create($rules);
+        return redirect()->route('area.index');
     }
 
     /**
