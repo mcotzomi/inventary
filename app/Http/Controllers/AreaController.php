@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AreaRequest;
 use App\Models\Area;
 use Illuminate\Http\Request;
 
@@ -34,15 +35,10 @@ class AreaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AreaRequest $request)
     {
-        $rules = $request->validate(
-            [
-                'name' => ['string', 'required'],
-                'cantidad' => ['integer', 'required'],
+        $rules = $request->validated();
 
-            ]
-        );
         //dd($rules);
         $area = Area::create($rules);
         return redirect()->route('area.index');
@@ -77,9 +73,11 @@ class AreaController extends Controller
      * @param  \App\Models\Area  $area
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Area $area)
+    public function update(AreaRequest $request, Area $area)
     {
-        //
+        $rules = $request->validate();
+        $area->update($rules);
+        return redirect()->route('area.index');
     }
 
     /**

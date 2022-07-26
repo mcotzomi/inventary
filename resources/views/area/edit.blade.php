@@ -8,9 +8,10 @@
     <h3>Altas</h3>
     </dev>
 
-    <form action="{{ route('area.store') }}" method="POST">
+    <form action="{{ route('area.update', $area) }}" method="POST">
+        @method('put')
 
-        <x-area-form-body />
+        <x-area-form-body :area="$area" />
     </form>
     @if ($errors->any())
         <div class="alert alert-danger">
