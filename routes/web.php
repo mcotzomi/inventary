@@ -18,10 +18,9 @@ Route::get('/', function () {
     return view('welcome');
     //return 'hola mundo';
 });
-
-Route::get('area/resgitrar', [AreaController::class, 'create'])->name('area.create');
+Route::get('area/{area}/ver', [AreaController::class, 'show'])->name('area.show');
+Route::get('area/registrar', [AreaController::class, 'create'])->name('area.create');
 Route::post('area/guardar', [AreaController::class, 'store'])->name('area.store');
-
 Route::get('area/listar', [AreaController::class, 'index'])->name('area.index');
 Route::get('area/{area}/editar', [AreaController::class, 'edit'])->name('area.edit');
 Route::put('area/{area}/actualizar', [AreaController::class, 'update'])->name('area.update');

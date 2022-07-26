@@ -26,6 +26,7 @@
                     </td>
                     <td>
                         <a href="{{ route('area.edit', $area) }}">editar</a>
+                        <a href="{{ route('area.show', $area) }}">ver</a>
                     </td>
                 </tr>
             @endforeach

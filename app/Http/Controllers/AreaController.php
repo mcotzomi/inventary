@@ -75,7 +75,7 @@ class AreaController extends Controller
      */
     public function update(AreaRequest $request, Area $area)
     {
-        $rules = $request->validate();
+        $rules = $request->validated();
         $area->update($rules);
         return redirect()->route('area.index');
     }
