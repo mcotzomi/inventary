@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AreaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,5 @@ Route::get('/', function () {
    
 
 });
+
+Route:: get ('area/resgitrar', [AreaController::class, 'create'])->name('area.create');

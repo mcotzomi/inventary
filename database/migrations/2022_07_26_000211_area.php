@@ -16,7 +16,7 @@ return new class extends Migration
         schema::create('areas', function(blueprint $table){
             $table->id();
             $table->string('name');
-            $table->string('cantidad');
+            $table->integer('cantidad');
             $table->timestamps();
         }); 
     }

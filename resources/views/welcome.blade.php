@@ -5,7 +5,7 @@
 <h3>Altas</h3>
 </dev>
 
-<form >
+<form action="{{ route('area.create') }}" method="get" >
 
 
 <select id="select1" name="areas">
