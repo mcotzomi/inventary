@@ -14,7 +14,7 @@ class AreaController extends Controller
      */
     public function index()
     {
-        $areas = Area::orderByDesc('id');
+        $areas = Area::orderByDesc('id')->get();
         return view('area.index', compact('areas'));
     }
 
