@@ -24,9 +24,11 @@
                     <td>
                         {{ $area->cantidad }}
                     </td>
+                    <td>
+                        <a href="{{ route('area.edit', $area) }}">editar</a>
+                    </td>
                 </tr>
             @endforeach
-
 
 
         </tbody>

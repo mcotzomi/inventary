@@ -67,7 +67,7 @@ class AreaController extends Controller
      */
     public function edit(Area $area)
     {
-        //
+        return view('area.edit', compact('area'));
     }
 
     /**

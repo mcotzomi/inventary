@@ -21,6 +21,12 @@
     <a href="{{ route('area.index') }}" class="btn btn-link">
         Listar productos
     </a>
+    <p>
+    </p>
+
+    <a href="" class="btn btn-link">
+        eliminar productos
+    </a>
 
 
     <div class="col-sm-12"></div>
