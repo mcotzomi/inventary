@@ -1,7 +1,7 @@
 <div>
     @csrf
 
-
+    {{-- cueropo de body html que es reutlizable --}}
     <select id="select1" name="areas">
         <option value="value1">Area 1</option>
         <option value="value2">Area 2</option>

@@ -4,9 +4,13 @@
     <h3>
         Listado de productos
     </h3>
+    {{-- En esta parte se muestra todo el listado de los productos en una tabla. --}}
     <table class="table table-striped table-hover">
         <thead>
             <tr>
+                <th>
+                    id
+                </th>
                 <th>
                     Nombre
                 </th>
@@ -19,6 +23,10 @@
             @foreach ($areas as $area)
                 <tr>
                     <td>
+                        {{ $area->id }}
+                    </td>
+
+                    <td>
                         {{ $area->name }}
                     </td>
                     <td>
@@ -30,10 +38,6 @@
                     </td>
                 </tr>
             @endforeach
-
-
         </tbody>
     </table>
-
-
 @endsection
