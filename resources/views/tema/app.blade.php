@@ -24,6 +24,15 @@
     <p>
     </p>
 
+    <a href="{{ route('basura.index') }}" class="btn btn-link">
+        Listar productos elimindos
+    </a>
+    <p>
+    </p>
+
+
+
+
 
 
 
