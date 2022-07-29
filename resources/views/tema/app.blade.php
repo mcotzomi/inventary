@@ -13,16 +13,34 @@
     </p>
 
     <a href="{{ route('area.create') }}" class="btn btn-link">
-        Crear nuevo producto
+        Crear nuevo producto (solo para administradores)
     </a>
     <p>
     </p>
 
     <a href="{{ route('area.index') }}" class="btn btn-link">
-        Listar productos
+        Modificación directa de la tabla del inventario.(solo para usper usuarios)
     </a>
     <p>
     </p>
+
+
+
+
+
+    <a href="">
+        agregar cantidad a algún producto
+    </a>
+    <p>
+    </p>
+
+
+    <a href="">
+        eliminar cantidad a algún producto
+    </a>
+    <p>
+    </p>
+
 
     <a href="{{ route('basura.index') }}" class="btn btn-link">
         Listar productos elimindos
@@ -30,6 +48,11 @@
     <p>
     </p>
 
+    <a href="">
+        Listar productos añadidos recientemente
+    </a>
+    <p>
+    </p>
 
 
 
