@@ -19,7 +19,7 @@
     </p>
 
     <a href="{{ route('area.index') }}" class="btn btn-link">
-        Modificación directa de la tabla del inventario.(solo para usper usuarios)
+        Modificación directa de la tabla del inventario.(solo para super usuarios)
     </a>
     <p>
     </p>
