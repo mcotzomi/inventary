@@ -25,4 +25,5 @@ Route::get('area/listar', [AreaController::class, 'index'])->name('area.index');
 Route::get('area/{area}/editar', [AreaController::class, 'edit'])->name('area.edit');
 Route::put('area/{area}/actualizar', [AreaController::class, 'update'])->name('area.update');
 Route::delete('area/{area}/eliminar', [AreaController::class, 'destroy'])->name('area.destroy');
-Route::get('basura/listar', [BasuraController::class, 'index'])->name('basura.index');
+Route::get('basura/registrar', [BasuraController::class, 'create'])->name('basura.create');
+Route::post('basura/guardar', [BasuraController::class, 'store'])->name('basura.store');

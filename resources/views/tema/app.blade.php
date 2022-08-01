@@ -35,14 +35,14 @@
     </p>
 
 
-    <a href="">
+    <a href="{{ route('basura.create') }}" class="btn btn-link">
         eliminar cantidad a algún producto
     </a>
     <p>
     </p>
 
 
-    <a href="{{ route('basura.index') }}" class="btn btn-link">
+    <a href="">
         Listar productos elimindos
     </a>
     <p>

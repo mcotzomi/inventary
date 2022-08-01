@@ -25,7 +25,7 @@ class BasuraController extends Controller
      */
     public function create()
     {
-        //
+        return view('basura.create');
     }
 
     /**
