@@ -14,8 +14,6 @@ class BasuraController extends Controller
      */
     public function index()
     {
-      
-
     }
 
     /**
@@ -36,8 +34,7 @@ class BasuraController extends Controller
      */
     public function store(Request $request)
     {
-         dd($request);
-     
+        dd($request);
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BasuraController;
 use App\Http\Controllers\AreaController;
 use Illuminate\Support\Facades\Route;
 
