@@ -1,9 +1,16 @@
+
+
+
+@extends('tema.app')
+@section('title', 'Eliminar cantidad')
+@section('contenido')
+
 <form action="{{ route('basura.store') }}" method="POST">
 
     <div>
         @csrf
 
-        {{-- cueropo de body html que es reutlizable --}}
+        {{-- cuerpo de body html que es reutlizable --}}
         <select id="select1" name="areas">
             <option value="value1">Area 1</option>
             <option value="value2">Area 2</option>
@@ -35,3 +42,15 @@
 
     </div>
 </form>
+
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
+@endsection

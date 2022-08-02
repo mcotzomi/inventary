@@ -14,8 +14,8 @@ class BasuraController extends Controller
      */
     public function index()
     {
-        $basuras = Basura::orderByDesc('id')->get();
-        return view('basura.index', compact('basuras'));
+      
+
     }
 
     /**
@@ -36,6 +36,8 @@ class BasuraController extends Controller
      */
     public function store(Request $request)
     {
+         dd($request);
+     
     }
 
     /**
