@@ -15,13 +15,13 @@
     <label>
         nombre del producto
     </label>
-    <input type="text" name="name"  value="{{$area->name}}" >
+    <input type="text" name="name" value="">
 
     <p>
     </p>
     <label>
         cantidad del producto
-        <input type="number" name="cantidad" >
+        <input type="number" name="cantidad">
     </label>
     </input>
     <div class="col-sm-12 text-end my-2">

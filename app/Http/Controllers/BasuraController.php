@@ -34,7 +34,15 @@ class BasuraController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $dates = $request->validate(
+            [
+                'decremento' => 'required',
+                'description' => 'nullable',
+                'id_area'  => 'required',
+
+
+            ]
+        );
     }
 
     /**
