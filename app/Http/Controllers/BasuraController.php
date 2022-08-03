@@ -44,7 +44,8 @@ class BasuraController extends Controller
 
             ]
         );
-        $basura = Basura::created( $dates );
+        $basura = Basura::create( $dates );
+        return redirect()->route('area.index');
     }
 
     /**

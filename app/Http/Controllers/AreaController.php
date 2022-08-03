@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AreaRequest;
+use App\Models\Basura;
 use App\Models\Area;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class AreaController extends Controller
      */
     public function index()
     {
-        $areas = Area::orderByDesc('id')->get();
+        $areas = Area::orderBy('id')->get();
+
         return view('area.index', compact('areas'));
     }
 
@@ -42,6 +44,7 @@ class AreaController extends Controller
         //dd($rules);
         $area = Area::create($rules);
         return redirect()->route('area.index');
+
     }
 
     /**
@@ -71,12 +74,18 @@ class AreaController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Area  $area
+     * @param  \App\Models\Basura  $basura
      * @return \Illuminate\Http\Response
      */
-    public function update(AreaRequest $request, Area $area)
+    public function update(AreaRequest $request, Area $area,  Basura $basura)
     {
+
+
         $rules = $request->validated();
         $area->update($rules);
+
+        //$areas = Area::orderBy('id')->get();
+        
         return redirect()->route('area.index');
     }
 
