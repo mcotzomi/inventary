@@ -77,16 +77,11 @@ class AreaController extends Controller
      * @param  \App\Models\Basura  $basura
      * @return \Illuminate\Http\Response
      */
-    public function update(AreaRequest $request, Area $area,  Basura $basura)
+    public function update(AreaRequest $request, Area $area)
     {
-
-
         $rules = $request->validated();
         $area->update($rules);
-
-        //$areas = Area::orderBy('id')->get();
-        
-        return redirect()->route('area.index');
+ return redirect()->route('area.index');
     }
 
     /**

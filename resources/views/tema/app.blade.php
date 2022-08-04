@@ -28,7 +28,7 @@
 
 
 
-    <a href="">
+    <a href="{{ route('alta.create') }}" class="btn btn-link">
         agregar cantidad a algún producto
     </a>
     <p>
@@ -42,13 +42,13 @@
     </p>
 
 
-    <a href="">
-        Listar productos elimindos
+    <a href="{{ route('basura.index') }}" class="btn btn-link">
+        Listar productos elimindos recientemente
     </a>
     <p>
     </p>
 
-    <a href="">
+    <a href="{{ route('alta.index') }}" class="btn btn-link">
         Listar productos añadidos recientemente
     </a>
     <p>

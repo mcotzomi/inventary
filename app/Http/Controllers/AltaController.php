@@ -1,24 +1,23 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
+use App\Models\Alta;
 use App\Models\Area;
-use App\Models\Basura;
 use Illuminate\Http\Request;
 
-class BasuraController extends Controller
+class AltaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-      * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $basuras = Basura::orderBy('id')->get();
+        $altas = Alta::orderBy('id')->get();
 
-        return view('basura.index', compact('basuras'));
+        return view('alta.index', compact('altas'));
     }
 
     /**
@@ -28,36 +27,32 @@ class BasuraController extends Controller
      */
     public function create()
     {
-        return view('basura.create');
+        return view('alta.create');
     }
 
     /**
      * Store a newly created resource in storage.
-     * 
-     *  
+     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request )   {
-        $dates = $request->validate(
+    public function store(Request $request)
+    {
+        $data_alta = $request->validate(
             [
-                'decremento' => 'required',
-                'description' => 'nullable',
+                'incremento' => ['integer', 'required'],
                 'id_area'  => 'required',
-
-
             ]
         );
 
-       
-        $basura = Basura::create( $dates );
+        $alta = Alta::create( $data_alta );
+        $item = Area::firstWhere('id', $data_alta['id_area']);
 
-    
+        $item->cantidad = $item->cantidad + $data_alta['incremento'];
+        $item->save();
+
+          
         return redirect()->route('area.index');
-        
-         
-        
-
     }
 
     /**
@@ -68,7 +63,7 @@ class BasuraController extends Controller
      */
     public function show($id)
     {
-        return view('basura.show', compact('basura'));
+        //
     }
 
     /**
@@ -91,7 +86,7 @@ class BasuraController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        //
     }
 
     /**

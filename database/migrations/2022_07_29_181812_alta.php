@@ -16,7 +16,7 @@ return new class extends Migration
 
         schema::create('altas', function (blueprint $table) {
             $table->id();
-            $table->integer('increnmento');
+            $table->integer('incremento');
             $table->unsignedBigInteger('id_area')->nullable();
             $table->foreign('id_area')
                 ->references('id')

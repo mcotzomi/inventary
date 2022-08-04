@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BasuraController;
 use App\Http\Controllers\AreaController;
+use App\Http\Controllers\AltaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,5 +27,13 @@ Route::get('area/listar', [AreaController::class, 'index'])->name('area.index');
 Route::get('area/{area}/editar', [AreaController::class, 'edit'])->name('area.edit');
 Route::put('area/{area}/actualizar', [AreaController::class, 'update'])->name('area.update');
 Route::delete('area/{area}/eliminar', [AreaController::class, 'destroy'])->name('area.destroy');
+
+Route::get('basura/{basura}/ver', [BasuraController::class, 'show'])->name('basura.show');
 Route::get('basura/registrar', [BasuraController::class, 'create'])->name('basura.create');
 Route::post('basura/guardar', [BasuraController::class, 'store'])->name('basura.store');
+Route::get('basura/listar', [BasuraController::class, 'index'])->name('basura.index');
+
+
+Route::get('alta/registrar', [AltaController::class, 'create'])->name('alta.create');
+Route::post('alta/guardar', [AltaController::class, 'store'])->name('alta.store');
+Route::get('alta/listar', [AltaController::class, 'index'])->name('alta.index');
