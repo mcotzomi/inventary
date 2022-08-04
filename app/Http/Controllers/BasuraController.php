@@ -39,7 +39,7 @@ class BasuraController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request )   {
-        $dates = $request->validate(
+        $data_baja = $request->validate(
             [
                 'decremento' => 'required',
                 'description' => 'nullable',
@@ -50,7 +50,12 @@ class BasuraController extends Controller
         );
 
        
-        $basura = Basura::create( $dates );
+        $basura = Basura::create( $data_baja );
+        $item_baja = Area:: firstWhere('id', $data_baja['id_area']);
+        $item_baja->cantidad = $item_baja->cantidad - $data_baja['decremento'];
+        $item_baja->save();
+
+
 
     
         return redirect()->route('area.index');
