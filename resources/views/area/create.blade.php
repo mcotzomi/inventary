@@ -5,8 +5,10 @@
         registrar producto
     </h3>
 
-    <h3>Altas</h3>
-    </dev>
+    <h3>
+        Altas
+    </h3>
+    
 
     <form action="{{ route('area.store') }}" method="POST">
         <x-area-form-body />
@@ -20,7 +22,4 @@
             </ul>
         </div>
     @endif
-
-
-
 @endsection

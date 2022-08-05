@@ -17,7 +17,6 @@ class AreaController extends Controller
     public function index()
     {
         $areas = Area::orderBy('id')->get();
-
         return view('area.index', compact('areas'));
     }
 
@@ -44,7 +43,6 @@ class AreaController extends Controller
         //dd($rules);
         $area = Area::create($rules);
         return redirect()->route('area.index');
-
     }
 
     /**
@@ -81,7 +79,7 @@ class AreaController extends Controller
     {
         $rules = $request->validated();
         $area->update($rules);
- return redirect()->route('area.index');
+        return redirect()->route('area.index');
     }
 
     /**

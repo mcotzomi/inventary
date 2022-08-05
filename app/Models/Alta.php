@@ -14,7 +14,6 @@ class Alta extends Model
         return $this->belongsTo('App\Models\Area');
     }
 
-
     protected $table = 'altas';
     protected $fillable = [
         'incremento',

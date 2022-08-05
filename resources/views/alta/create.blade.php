@@ -2,6 +2,7 @@
 @section('title', 'agregar cantidad')
 @section('contenido')
 
+
     <form action="{{ route('alta.store') }}" method="POST">
 
         <div>
@@ -14,32 +15,23 @@
                 <option value="value3">Area 3</option>
             </select>
 
-         {{--
-
-
-            <select id="select" name="id_area">
-                @foreach($areas as $area)
-                    <option value="{{ $area->id }}">{{ $area->id }}</option>
-                @endforeach
-            </select>
-
-        --}}
 
             <p>
             </p>
 
-            <label>
-                Id del producto a incrementar
-            </label>
-            <input type="text" name="id_area">
+            <select id="select" name="id_area">
+                @foreach ($areas as $area)
+                    <option value="{{ $area->id }}">id:{{ $area->id }}</option>
+                @endforeach
+            </select>
 
             <p>
             </p>
             <label>
                 incremento
             </label>
-            <input type="number" name="incremento">
-           
+            <input type="number" name="incremento" min="1">
+
 
             <div class="col-sm-12 text-end my-2">
                 <button type="submit" class="btn btn-primary">

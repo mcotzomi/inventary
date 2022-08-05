@@ -13,7 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        schema::create('basuras', function (blueprint $table) {
+        schema::create('basuras', function (blueprint $table) 
+        {
             $table->id();
             $table->integer('decremento');
             $table->string('description');

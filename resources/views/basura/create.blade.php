@@ -14,41 +14,35 @@
                 <option value="value3">Area 3</option>
             </select>
 
-
             <p>
             </p>
-
-            <label>
-                Id del producto a reducir
-            </label>
-            <input type="text" name="id_area">
+            <select id="select" name="id_area">
+                @foreach ($areas as $area)
+                    <option value="{{ $area->id }}">id:{{ $area->id }}</option>
+                @endforeach
+            </select>
 
             <p>
             </p>
             <label>
                 decremento
-                <input type="number" name="decremento">
             </label>
-            </input>
-
-
+                <input type="number" name="decremento" max="-1">
+            
             <p>
             </p>
             <label>
              Por qué desea quitar alguna cantidad?
+            </label>
              <p>
             </p>
-                <textarea name="description" rows="10" cols="40"> </textarea>
-            </label>
-            </input>
-
-
+            <textarea name="description" rows="10" cols="40"> </textarea>
+            
             <div class="col-sm-12 text-end my-2">
                 <button type="submit" class="btn btn-primary">
                     quitar
                 </button>
             </div>
-
 
         </div>
     </form>

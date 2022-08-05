@@ -8,7 +8,6 @@
         <option value="value3">Area 3</option>
     </select>
 
-
     <p>
     </p>
 
@@ -30,6 +29,4 @@
             guardar
         </button>
     </div>
-
-
 </div>

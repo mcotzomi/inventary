@@ -11,16 +11,15 @@
                 <th>
                     id
                 </th>
-               
                 <th>
                     incremento
                 </th>
-                
+
                 <th>
                     fecha de incremento al inventario
                 </th>
 
-           </tr>
+            </tr>
         </thead>
         <tbody>
             @foreach ($altas as $alta)
@@ -28,14 +27,12 @@
                     <td>
                         {{ $alta->id }}
                     </td>
-
                     <td>
                         {{ $alta->incremento }}
                     </td>
                     <td>
                         {{ $alta->created_at }}
                     </td>
-                   
                 </tr>
             @endforeach
         </tbody>

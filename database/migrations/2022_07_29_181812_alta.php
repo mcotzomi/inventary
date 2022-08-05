@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
 
-        schema::create('altas', function (blueprint $table) {
+        schema::create('altas', function (blueprint $table) 
+        {
             $table->id();
             $table->integer('incremento');
             $table->unsignedBigInteger('id_area')->nullable();

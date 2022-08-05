@@ -1,6 +1,8 @@
 @extends('tema.app')
 @section('title', 'Listado de productos de UDES')
 @section('contenido')
+
+
     <h3>
         Listado de productos
     </h3>
@@ -25,7 +27,6 @@
                     <td>
                         {{ $area->id }}
                     </td>
-
                     <td>
                         {{ $area->name }}
                     </td>

@@ -12,7 +12,7 @@ class BasuraController extends Controller
     /**
      * Display a listing of the resource.
      *
-      * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -28,7 +28,8 @@ class BasuraController extends Controller
      */
     public function create()
     {
-        return view('basura.create');
+        $areas = Area::orderBy('id')->get();
+        return view('basura.create', compact('areas'));
     }
 
     /**
@@ -38,7 +39,8 @@ class BasuraController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request )   {
+    public function store(Request $request)
+    {
         $data_baja = $request->validate(
             [
                 'decremento' => 'required',
@@ -49,20 +51,18 @@ class BasuraController extends Controller
             ]
         );
 
-       
-        $basura = Basura::create( $data_baja );
-        $item_baja = Area:: firstWhere('id', $data_baja['id_area']);
-        $item_baja->cantidad = $item_baja->cantidad - $data_baja['decremento'];
+        $basura = Basura::create($data_baja);
+        $item_baja = Area::firstWhere('id', $data_baja['id_area']);
+        $item_baja->cantidad = $item_baja->cantidad + $data_baja['decremento']; 
+        if($item_baja->cantidad >= 0 )
+        {
         $item_baja->save();
-
-
-
-    
+        }
+        else
+        { 
+         return view('basura.error');
+        }
         return redirect()->route('area.index');
-        
-         
-        
-
     }
 
     /**
@@ -96,7 +96,6 @@ class BasuraController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
     }
 
     /**

@@ -11,7 +11,6 @@
                 <th>
                     id
                 </th>
-               
                 <th>
                     decremento
                 </th>
@@ -30,7 +29,6 @@
                     <td>
                         {{ $basura->id }}
                     </td>
-
                     <td>
                         {{ $basura->decremento }}
                     </td>

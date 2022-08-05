@@ -16,8 +16,8 @@ class AltaController extends Controller
     public function index()
     {
         $altas = Alta::orderBy('id')->get();
-
         return view('alta.index', compact('altas'));
+    
     }
 
     /**
@@ -27,7 +27,8 @@ class AltaController extends Controller
      */
     public function create()
     {
-        return view('alta.create');
+        $areas = Area::orderBy('id')->get();
+        return view('alta.create', compact('areas'));
     }
 
     /**
@@ -51,7 +52,6 @@ class AltaController extends Controller
         $item->cantidad = $item->cantidad + $data_alta['incremento'];
         $item->save();
 
-          
         return redirect()->route('area.index');
     }
 

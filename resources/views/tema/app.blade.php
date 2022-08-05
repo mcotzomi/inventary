@@ -8,7 +8,7 @@
         <h1>Inventary</h1>
     </div>
 
-
+   
     <p>
     </p>
 
@@ -23,9 +23,6 @@
     </a>
     <p>
     </p>
-
-
-
 
 
     <a href="{{ route('alta.create') }}" class="btn btn-link">
@@ -53,11 +50,6 @@
     </a>
     <p>
     </p>
-
-
-
-
-
 
     <div class="col-sm-12"></div>
     @yield('contenido')
