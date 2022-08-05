@@ -2,6 +2,12 @@
 @section('title', 'Eliminar cantidad')
 @section('contenido')
 
+<div style="color: red; background-color: lightcoral">
+    @if (session()->has('error'))
+        {{ session()->get('error') }}
+    @endif
+</div>
+
     <form action="{{ route('basura.store') }}" method="POST">
 
         <div>
@@ -27,7 +33,7 @@
             <label>
                 decremento
             </label>
-                <input type="number" name="decremento" max="-1">
+                <input type="number" name="decremento" max="-1" value="{{ old('decremento') }}">
             
             <p>
             </p>
@@ -36,7 +42,9 @@
             </label>
              <p>
             </p>
-            <textarea name="description" rows="10" cols="40"> </textarea>
+            <textarea name="description" rows="10" cols="40"> 
+                {{ old('description') }}
+            </textarea>
             
             <div class="col-sm-12 text-end my-2">
                 <button type="submit" class="btn btn-primary">

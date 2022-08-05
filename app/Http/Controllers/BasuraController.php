@@ -43,7 +43,8 @@ class BasuraController extends Controller
     {
         $data_baja = $request->validate(
             [
-                'decremento' => 'required',
+                'decremento' => ['integer', 'max:-1', 'required'],
+                // 'decremento' => ['required'],
                 'description' => 'nullable',
                 'id_area'  => 'required',
 
@@ -52,16 +53,19 @@ class BasuraController extends Controller
         );
 
         $basura = Basura::create($data_baja);
+
         $item_baja = Area::firstWhere('id', $data_baja['id_area']);
+
         $item_baja->cantidad = $item_baja->cantidad + $data_baja['decremento']; 
-        if($item_baja->cantidad >= 0 )
-        {
-        $item_baja->save();
+
+        if($item_baja->cantidad >= 0 ) {
+            $item_baja->save();
+        } else { 
+            return redirect()
+                ->route('basura.create')
+                ->with('error', 'La cantidad no pude ser menor a cero.');
         }
-        else
-        { 
-         return view('basura.error');
-        }
+        
         return redirect()->route('area.index');
     }
 
