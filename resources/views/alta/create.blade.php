@@ -21,7 +21,7 @@
 
             <select id="select" name="id_area">
                 @foreach ($areas as $area)
-                    <option value="{{ $area->id }}">id:{{ $area->id }}</option>
+                    <option value="{{ $area->id }}">{{ $area->name }}</option>
                 @endforeach
             </select>
 

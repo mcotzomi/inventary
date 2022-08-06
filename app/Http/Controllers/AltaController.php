@@ -17,7 +17,6 @@ class AltaController extends Controller
     {
         $altas = Alta::orderBy('id')->get();
         return view('alta.index', compact('altas'));
-    
     }
 
     /**
@@ -41,18 +40,32 @@ class AltaController extends Controller
     {
         $data_alta = $request->validate(
             [
-                'incremento' => ['integer', 'required'],
+                'incremento' => 'required',
                 'id_area'  => 'required',
             ]
         );
 
-        $alta = Alta::create( $data_alta );
+        $alta = Alta::create($data_alta);
         $item = Area::firstWhere('id', $data_alta['id_area']);
 
         $item->cantidad = $item->cantidad + $data_alta['incremento'];
-        $item->save();
 
+
+        if($item->cantidad >= 1 ) {
+            $item->save();
+        } else { 
+            return redirect()
+                ->route('altas.create')
+                ->with('error', 'La cantidad no pude ser menor a cero.');
+        }
+        
         return redirect()->route('area.index');
+    }
+
+
+        //$item->save();
+
+        //return redirect()->route('area.index');
     }
 
     /**
