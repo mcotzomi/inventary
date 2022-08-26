@@ -51,6 +51,12 @@
     <p>
     </p>
 
+    <p>
+    </p>
+ <a href="{{ route('user.create') }}" class="btn btn-link">
+        Registrarse
+    </a>
+
     <div class="col-sm-12"></div>
     @yield('contenido')
 

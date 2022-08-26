@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 
-use App\Models\Alta;
-use App\Models\Area;
 use Illuminate\Http\Request;
 
-class AltaController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class AltaController extends Controller
      */
     public function index()
     {
-        $altas = Alta::orderBy('id')->get();
-        return view('alta.index', compact('altas'));
+        //
     }
 
     /**
@@ -26,8 +24,7 @@ class AltaController extends Controller
      */
     public function create()
     {
-        $areas = Area::orderBy('id')->get();
-        return view('alta.create', compact('areas'));
+         return view('user.create');
     }
 
     /**
@@ -38,35 +35,17 @@ class AltaController extends Controller
      */
     public function store(Request $request)
     {
-        $data_alta = $request->validate(
+        $data_user = $request->validate(
             [
-                'incremento' => 'required',
-                'id_area'  => 'required',
+                'name' => 'required',
+                'email'  => 'required',
+                'password'  => 'required',
             ]
         );
 
-        $alta = Alta::create($data_alta);
-        $item = Area::firstWhere('id', $data_alta['id_area']);
-
-        $item->cantidad = $item->cantidad + $data_alta['incremento'];
-
-
-        if($item->cantidad >= 1 ) {
-            $item->save();
-        } else { 
-            return redirect()
-                ->route('altas.create')
-                ->with('error', 'La cantidad no pude ser menor a cero.');
-        }
-
-        return redirect()->route('area.index');
+        $user = User::create($data_user);
+        return view('tema.app');
     }
-
-
-        //$item->save();
-
-        //return redirect()->route('area.index');
-
 
     /**
      * Display the specified resource.
@@ -76,7 +55,7 @@ class AltaController extends Controller
      */
     public function show($id)
     {
-        //cd
+        //
     }
 
     /**

@@ -3,6 +3,7 @@
 use App\Http\Controllers\BasuraController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\AltaController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,3 +38,10 @@ Route::get('basura/listar', [BasuraController::class, 'index'])->name('basura.in
 Route::get('alta/registrar', [AltaController::class, 'create'])->name('alta.create');
 Route::post('alta/guardar', [AltaController::class, 'store'])->name('alta.store');
 Route::get('alta/listar', [AltaController::class, 'index'])->name('alta.index');
+
+
+Route::get('user/registrar', [UserController::class, 'create'])->name('user.create');
+Route::post('user/guardar', [UserController::class, 'store'])->name('user.store');
+Route::get('user/listar', [UserController::class, 'index'])->name('user.index');
+
+
